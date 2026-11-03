@@ -15,6 +15,6 @@ def test_health():
     assert response.json() == {"message": "L'API est opérationnelle"}
 
 def test_chat():
-    response = client.post("/chat", data={"text": "Le message a été reçu."})
+    response = client.post("/chat", json={"text": "Coucou"})
     assert response.status_code == 200
-    assert response.json() == {"message": "Le message a été reçu."}
+    assert response.json() == {"message": "Le message suivant a été reçu : Coucou."}

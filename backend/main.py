@@ -18,4 +18,4 @@ def health():
 @app.post("/chat")
 def chat(message: Message):
     logger.info(f"Message reçu : {message.text}")
-    return {"message": "Le message a été reçu."}
+    return {"message": f"Le message suivant a été reçu : {message.text}."}
